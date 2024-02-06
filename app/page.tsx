@@ -17,7 +17,7 @@ const frameMetadata = getFrameMetadata({
       label: 'Mint',
     },
   ],
-  image: `${NEXT_PUBLIC_URL}/park-1.png`,
+  image: `${NEXT_PUBLIC_URL}/robot.jpg`,
   input: {
     text: 'Tell me a boat story',
   },
