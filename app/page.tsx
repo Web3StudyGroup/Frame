@@ -14,9 +14,6 @@ const frameMetadata = getFrameMetadata({
       label: 'Connect',
     },
     {
-      label: 'Story time!',
-    },
-    {
       label: 'Redirect to cute dog pictures',
       action: 'post_redirect',
     },
