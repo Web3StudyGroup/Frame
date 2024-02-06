@@ -5,7 +5,7 @@ import { NEXT_PUBLIC_URL } from '../../config';
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   let accountAddress: string | undefined = '';
   let text: string | undefined = '';
-
+  const apiSecret = process.env.KEY;
   const body: FrameRequest = await req.json();
   const { isValid, message } = await getFrameMessage(body, { neynarApiKey: 'NEYNAR_ONCHAIN_KIT' });
 
@@ -28,7 +28,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     getFrameHtmlResponse({
       buttons: [
         {
-          label: `🌲 Text: ${text}, isValid:${isValid}, by ${accountAddress}, liked:${message?.liked}`,
+          label: `🌲 Text: ${text},key:${apiSecret}, isValid:${isValid}, by ${accountAddress}, liked:${message?.liked}`,
         },
       ],
       image: `${NEXT_PUBLIC_URL}/robot.jpg`,
