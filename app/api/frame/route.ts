@@ -31,7 +31,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           label: `🌲 Text: ${text}, isValid:${isValid}, by ${accountAddress}, liked:${message?.liked}`,
         },
       ],
-      image: `${NEXT_PUBLIC_URL}/park-2.png`,
+      image: `${NEXT_PUBLIC_URL}/park-2.jpg`,
       post_url: `${NEXT_PUBLIC_URL}/api/frame`,
     }),
   );
