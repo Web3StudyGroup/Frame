@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'web3.study',
     description: 'LFG',
-    images: [`${NEXT_PUBLIC_URL}/park-1.jpg`],
+    images: [`${NEXT_PUBLIC_URL}/robot.jpg`],
   },
   other: {
     ...frameMetadata,
