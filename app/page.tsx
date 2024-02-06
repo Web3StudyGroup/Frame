@@ -5,7 +5,7 @@ import { NEXT_PUBLIC_URL } from './config';
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: 'Story time!',
+      label: 'RobotDAO',
     },
     {
       label: 'Settings',
@@ -14,8 +14,7 @@ const frameMetadata = getFrameMetadata({
       label: 'Connect',
     },
     {
-      label: 'Redirect to cute dog pictures',
-      action: 'post_redirect',
+      label: 'Mint',
     },
   ],
   image: `${NEXT_PUBLIC_URL}/park-1.png`,
