@@ -49,7 +49,7 @@ export async function generateMetadata(): Promise<Metadata> {
     other: {
       "fc:frame": "vNext",
       // "fc:frame:image": `${NEXT_PUBLIC_URL}/api/image`,
-      "fc:frame:image": `${NEXT_PUBLIC_URL}/public/bg.jpeg`,
+      "fc:frame:image": `${NEXT_PUBLIC_URL}/bg.jpeg`,
       "fc:frame:button:1": "RobotDAO",
       "fc:frame:button:2": "Settings",
       "fc:frame:button:3": "Connect",
