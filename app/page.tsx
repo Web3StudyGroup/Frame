@@ -5,7 +5,7 @@ import { NEXT_PUBLIC_URL } from './config';
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: 'RobotDAO',
+      label: 'RobotDAO1',
     },
     {
       label: 'Settings',
@@ -19,7 +19,7 @@ const frameMetadata = getFrameMetadata({
   ],
   image: `${NEXT_PUBLIC_URL}/robot.jpg`,
   input: {
-    text: 'Tell me a boat story',
+    text: 'Tell me a robot story!',
   },
   post_url: `${NEXT_PUBLIC_URL}/api/frame`,
 });
