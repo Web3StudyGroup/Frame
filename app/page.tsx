@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <h1>web3.study</h1>
+      <h1>Only available in Warpcast. Powered by Blast.</h1>
     </>
   );
 }
