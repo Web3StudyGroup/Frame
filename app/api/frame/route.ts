@@ -7,7 +7,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   let text: string | undefined = '';
   const apiSecret = process.env.KEY;
   const body: FrameRequest = await req.json();
-  const { isValid, message } = await getFrameMessage(body, { neynarApiKey: 'NEYNAR_ONCHAIN_KIT' });
+  const { isValid, message } = await getFrameMessage(body);
 
   if (isValid) {
     accountAddress = message.interactor.verified_accounts[0];
@@ -17,14 +17,12 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     text = message.input;
   }
 
-  return new NextResponse()
-
-  // if (message?.button === 2) {
-  //   return NextResponse.redirect(
-  //     'https://www.google.com/search?q=cute+dog+pictures&tbm=isch&source=lnms',
-  //     { status: 302 },
-  //   );
-  // }
+  if (message?.button === 2) {
+    return NextResponse.redirect(
+      'https://www.google.com/search?q=cute+dog+pictures&tbm=isch&source=lnms',
+      { status: 302 },
+    );
+  }
 
 //   return new NextResponse(`
 //   <!DOCTYPE html>
@@ -37,17 +35,17 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 //   </html>
 // `)
 
-  // return new NextResponse(
-  //   getFrameHtmlResponse({
-  //     buttons: [
-  //       {
-  //         label: `🌲 Text: ${text}, isValid:${isValid}, by ${accountAddress}, liked:${message?.liked}`,
-  //       },
-  //     ],
-  //     image: `${NEXT_PUBLIC_URL}/robot.jpg`,
-  //     post_url: `${NEXT_PUBLIC_URL}/api/frame`,
-  //   }),
-  // );
+  return new NextResponse(
+    getFrameHtmlResponse({
+      buttons: [
+        {
+          label: `🌲 Text: ${text}, isValid:${isValid}, by ${accountAddress}, liked:${message?.liked}`,
+        },
+      ],
+      image: `${NEXT_PUBLIC_URL}/robot.jpg`,
+      post_url: `${NEXT_PUBLIC_URL}/api/frame`,
+    }),
+  );
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
