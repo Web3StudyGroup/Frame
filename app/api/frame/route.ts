@@ -17,23 +17,23 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     text = message.input;
   }
 
-  if (message?.button === 2) {
-    return NextResponse.redirect(
-      'https://www.google.com/search?q=cute+dog+pictures&tbm=isch&source=lnms',
-      { status: 302 },
-    );
-  }
+  // if (message?.button === 2) {
+  //   return NextResponse.redirect(
+  //     'https://www.google.com/search?q=cute+dog+pictures&tbm=isch&source=lnms',
+  //     { status: 302 },
+  //   );
+  // }
 
-//   return new NextResponse(`
-//   <!DOCTYPE html>
-//   <html>
-//     <head>
-//       <meta property="fc:frame" content="vNext" />
-//       <meta property="fc:frame:image" content="http://...image-result.png" />
-//     </head>
-//     <body>hello world</body>
-//   </html>
-// `)
+  return new NextResponse(`
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta property="fc:frame" content="vNext" />
+      <meta property="fc:frame:image" content="${NEXT_PUBLIC_URL}/api/frame" />
+    </head>
+    <body>hello world</body>
+  </html>
+`)
 
   return new NextResponse(
     getFrameHtmlResponse({
