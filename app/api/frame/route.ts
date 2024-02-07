@@ -24,16 +24,6 @@ async function getResponse(req: NextRequest): Promise<Response> {
   //   );
   // }
 
-  const svgText = `
-            <svg width="${100}" height="${50}">
-                <style>
-                    .title { fill: #fff; font-size: ${10}px; font-family: Arial; }
-                </style>
-                <rect width="100%" height="100%" fill="#333" />
-                <text x="50%" y="50%" class="title" dominant-baseline="middle" text-anchor="middle">${text}</text>
-            </svg>
-        `;
-
   return new NextResponse(
     getFrameHtmlResponse({
       buttons: [
@@ -41,8 +31,7 @@ async function getResponse(req: NextRequest): Promise<Response> {
           label: `🌲 Text: ${text}, isValid:${isValid}, by ${accountAddress}, liked:${message?.liked}`,
         },
       ],
-      // image: `${NEXT_PUBLIC_URL}/robot.jpg`,
-      image:svgText,
+      image: `${NEXT_PUBLIC_URL}/api/image`,
       post_url: `${NEXT_PUBLIC_URL}/api/frame`,
     }),
   );
