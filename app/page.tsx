@@ -17,7 +17,7 @@ const frameMetadata = getFrameMetadata({
       label: 'Mint',
     },
   ],
-  image: `${NEXT_PUBLIC_URL}/robot.jpg`,
+  image: `${NEXT_PUBLIC_URL}/api/image`,
   input: {
     text: 'Tell me a robot story!',
   },
